@@ -1,0 +1,47 @@
+﻿@model ToDoList.BL.DTO.ToDoListDTO
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Todo Model</h4>
+<hr />
+<div>
+    <form class="row" asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>            
+        <div class="p-4 col form-group">
+            <div class="row">
+                <label asp-for="Title" class="col control-label"></label>
+                <input asp-for="Title" class="col form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>                
+            </div>
+        </div>
+        <div class="p-4 col form-group">
+            <div class="row">
+                <label asp-for="Description" class="col control-label"></label>
+                <input asp-for="Description" class="col form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="p-4 col form-group">
+            <div class="row">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsFinished" /> @Html.DisplayNameFor(model => model.IsFinished)
+                </label>
+            </div>
+        </div>
+        <div class="p-4 d-flex justify-content-center form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

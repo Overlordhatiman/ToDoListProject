@@ -1,0 +1,26 @@
+﻿@model ToDoList.BL.DTO.UserDTO
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<h1>Profile</h1>
+
+<dl class="row">
+    <dt class = "col-sm-2">
+        @Html.DisplayNameFor(model => model.Email)
+    </dt>
+    <dd class = "col-sm-10">
+        @Html.DisplayFor(model => model.Email)
+    </dd>@*
+    <h2>Materials</h2>
+    @foreach (var material in Model.ToDoLists)
+    {
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => material.Title)
+        </dt>        
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => material.IsFinished)
+        </dd>
+    }*@
+</dl>
